@@ -31,3 +31,7 @@ body{
 .btn-primary:hover {
     background: linear-gradient(270deg, rgba(252,207,226,1) 0%, rgba(177,211,252,1) 100%)!important;
 }
+img {
+    clip-path: circle(50%);
+    background: #FCCFE2;
+}
