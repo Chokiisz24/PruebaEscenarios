@@ -1,7 +1,7 @@
 <?php
 
 require_once "Controller/login.controller.php"; //Agregamos el controlador
-require_once "Model/inicio.model.php"; //Agregamos el modelo
+require_once "../PruebaEscenarios/Model/inicio.model.php"; //Agregamos el modelo
 
 try{
 
