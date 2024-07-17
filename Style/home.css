@@ -1,18 +1,17 @@
-body{
-background-image: url(/img/background2.png);
-background-size: cover;
-background-repeat: no-repeat;
-background-attachment: fixed;
-
+body {
+    background-image: url(../img/background5.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
-.navbar{
-    background-color: #ffffffde;
+.navbar {
+    background-color: #ffffff00;
 }
-.nav-link{
-    color: rgb(0, 0, 0)!important;
+.nav-link {
+    color: rgb(255, 255, 255) !important;
 }
 .navbar-nav .nav-link:hover {
-    color: #ff00ff!important; 
+    color: #7f70ff !important; 
 }
 .container {
     height: 90vh;
@@ -20,34 +19,33 @@ background-attachment: fixed;
     justify-content: center;
     align-items: center;
 }
-
-.formulario-content{
+.formulario-content {
     width: 100%;
     max-width: 550px;
     padding: 25px;
-    background: #ffffffde;
+    background: #75319c81;
     border-radius: 20px;
-    box-shadow: 0 0 10px rgba(51, 51, 51, 0.7);
+    box-shadow: 0 0 40px rgba(51, 51, 51, 0.7);
     align-items: center;
 }
 .form-floating {
-    margin-bottom: 15px; /* Añadir espacio entre los campos */
+    margin-bottom: 15px;
 }
-.hero{
+.hero {
     width: 100%;
     min-width: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-#drop-area{
+#drop-area {
     width: 500px;
     height: 220px;
     padding: 15px;
     text-align: center;
     border-radius: 20px;
 }
-#img-view{
+#img-view {
     width: 100%;
     height: 100%;
     border-radius: 20px;
@@ -56,13 +54,33 @@ background-attachment: fixed;
     background-position: center;
     background-size: cover;
 }
-#img-view img{
+#img-view img {
     width: 100px;
     margin-top: 10px;
 }
-#img-view span{
+#img-view span {
     display: block;
     font-size: 12px;
     color: #777;
     margin-top: 15px;
 }
+.w-33 {
+    width: 100%;
+    text-align: center;
+}
+.btn {
+    background-color: #2533d5 !important;
+    color: white !important;
+}
+.btn:hover {
+    background-color: #5F119E !important;
+}
+.input-group {
+    align-items: center!important;
+}
+.input-group .form-select {
+    flex: 0 0 26%!important; 
+    margin-right: 10px!important;
+}
+
+
