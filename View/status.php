@@ -2,10 +2,11 @@
 include_once '../Controller/conexion.php';
 $objeto = new Conexion();
 $link = $objeto->conectar();
-$consulta = "SELECT e.titulo, e.descripcion, u.tipoUser AS user, p.tipo AS pasos, e.folio, e.fecha
+$consulta = "SELECT e.titulo, e.descripcion, u.tipoUser AS user, p.tipo AS pasos, f.nombre AS media, e.folio, e.fecha
 FROM `escenario` AS e
 INNER JOIN `usuarios` AS u ON e.user = u.id
-INNER JOIN `pasos` AS p ON e.pasos = p.id;";
+INNER JOIN `pasos` AS p ON e.pasos = p.id
+INNER JOIN `files` AS f ON e.media = f.id;  ";
 $resultado = $link->prepare($consulta);
 $resultado->execute();
 $escenario=$resultado->fetchAll(PDO::FETCH_ASSOC);
@@ -54,7 +55,7 @@ $escenario=$resultado->fetchAll(PDO::FETCH_ASSOC);
     <div class="pt-4 text-light" id="logostatus">
         <img src="../img/status.png" class="center" width="60px">
         <h1 class="m-2">ESTADOS</h1>
-</div>
+    </div>
 
 
     <div class="m-5">
