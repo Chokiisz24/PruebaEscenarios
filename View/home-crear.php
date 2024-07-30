@@ -13,7 +13,7 @@
             <div id="collapse navbar-collapse">
                 <ul class="navbar-nav">
                     <a class="navbar-brand text-light" href="#">
-                        <img src="img/iconbug.png" alt="" width="25" class="d-inline-block align-text-top">Bug Free
+                        <img src="../img/iconbug.png" alt="" width="25" class="d-inline-block align-text-top">Bug Free
                     </a>
                     <li class="nav-item">
                         <a class="nav-link" id="projectos" href="#">Projectos</a>
@@ -31,16 +31,16 @@
             </div>
         </div>
     </nav>
-    <form action="">
+    <form action="../Controller/escenario.controler.php" method="POST">
         <div class="container">
             <div class="formulario-content">
                 <h1 class="text-center text-light mb-3">Crear Escenarios</h1>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control"  placeholder="">
+                    <input type="text" name="titulo" class="form-control"  placeholder="">
                     <label for="floatingInput1">Titulo</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control"placeholder="">
+                    <input type="text" name="descripcion" class="form-control"placeholder="">
                     <label for="floatingInput2">Descripcion</label>
                 </div>
                 <div class="input-group">
@@ -71,7 +71,7 @@
                 </div>
                 <div class="w-33">
                     <div class="center text-light">
-                        <button type="button" class="btn btn-primary">Subir Archivo</button>
+                        <button type="submit" class="btn btn-primary">GUARDAR</button>
                     </div>
                 </div>
             </div>
