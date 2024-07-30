@@ -25,7 +25,7 @@
                         <a class="nav-link" id="crear" href="#">Crear</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="crear" href="status.php">Status</a>
+                        <a class="nav-link" id="crear" href="status.php">Estados</a>
                     </li>
                 </ul>
             </div>

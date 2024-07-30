@@ -25,7 +25,7 @@ class ControllerLogin
         }
         for ($i = 0; $i < count($val); $i++) {
             if ($val[$i]['username'] == $moduser->getUsuario() && $val[$i]['passwd'] == $moduser->getPasswd()) {
-                header('Location: View/home.php');
+                header('Location: View/home-crear.php');
                 exit();
                 // return $val; // Devuelve el primer registro como un objeto de clase
             }

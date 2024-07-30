@@ -20,11 +20,20 @@ body {
     align-items: center;
 }
 th{
-    background-color: #cb78ec!important;
+    background-color: #7414a8!important;
     /* border: solid 1px #31D2F2!important; */
     padding:10px;
     text-align: center!important;
-  }
-  td{
-    background-color: #ffffffef!important;
-  }
+    color: aliceblue!important;
+}
+td{
+    background-color: #ffffff!important;
+}
+img.center{
+    vertical-align: middle!important;
+}
+#logostatus{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}

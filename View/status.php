@@ -45,15 +45,20 @@ $escenario=$resultado->fetchAll(PDO::FETCH_ASSOC);
                             <a class="nav-link" id="crear" href="home-crear.php">Crear</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="crear" href="status.php">Status</a>
+                            <a class="nav-link" id="crear" href="status.php">Estados</a>
                         </li>
                     </ul>
                 </div>
             </div>
     </nav>
-    <h1 class="text-center text-light  pt-5">ESTATUS</h1>
+    <div align="center" class="pt-4 text-light" id="logostatus">
+        <img src="../img/status.png" class="center" width="60px">
+        <h1 class="m-2">ESTADOS</h1>
+</div>
+
+   
     <div class="m-5">
-            <table id="example" class="table table-borderless" style="width:100%">
+            <table id="example" class="table table-striped" style="width:100%">
                 <thead class="text-center table-info">
                     <th>Titulo</th>
                     <th>Descripcion</th>
