@@ -12,7 +12,7 @@ class Conexion{
             $link = new PDO("mysql:host=" . self::$host . "; dbname=" . self::$dbname, self::$username, self::$password);
            // $link->exec("set names utf8");
             $link->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "Connected successfully".'---';
+            //echo "Connected successfully".'---';
             return $link;
         
     } catch(PDOException $e) {

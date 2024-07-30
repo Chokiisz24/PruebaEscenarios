@@ -1,3 +1,16 @@
+<?php
+include_once '../Controller/conexion.php';
+$objeto = new Conexion();
+$link = $objeto->conectar();
+$consulta = "SELECT e.titulo, e.descripcion, u.tipoUser AS user, p.tipo AS pasos, e.folio, e.fecha
+FROM `escenario` AS e
+INNER JOIN `usuarios` AS u ON e.user = u.id
+INNER JOIN `pasos` AS p ON e.pasos = p.id;";
+$resultado = $link->prepare($consulta);
+$resultado->execute();
+$escenario=$resultado->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -29,7 +42,7 @@
                             <a class="nav-link" id="aplicaciones" href="#">Aplicaciones</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="crear" href="#">Crear</a>
+                            <a class="nav-link" id="crear" href="home-crear.php">Crear</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="crear" href="status.php">Status</a>
@@ -41,7 +54,35 @@
     <h1 class="text-center text-light  pt-5">ESTATUS</h1>
     <div class="m-5">
             <table id="example" class="table table-borderless" style="width:100%">
-                
+                <thead class="text-center table-info">
+                    <th>Titulo</th>
+                    <th>Descripcion</th>
+                    <th>Tester Asignado</th>
+                    <th>Tipo de paso</th>
+                    <th>Media</th>
+                    <th>Folio</th>
+                    <th>Fecha</th>
+                </thead>
+                <tbody>
+                    <?php
+                        foreach($escenario as $escenarios){
+                    ?>
+                    <tr>
+                    <td> <?php echo $escenarios['titulo'] ?></td>
+                    <td> <?php echo $escenarios['descripcion'] ?></td>
+                    <td> <?php echo $escenarios['user'] ?></td>
+                    <td> <?php echo $escenarios['pasos'] ?></td>
+                    <td> <?php echo $escenarios['media'] ?></td>
+                    <td> <?php echo $escenarios['folio'] ?></td>
+                    <td> <?php echo $escenarios['fecha'] ?></td>
+                    
+
+                        </tr>
+                        <?php
+                        }
+                        ?>
+                    </tbody>
+
             </table>
     </div>
 
