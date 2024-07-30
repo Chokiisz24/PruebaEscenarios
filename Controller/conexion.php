@@ -5,7 +5,7 @@ class Conexion{
     static private $host = 'localhost';
     static private $dbname = 'escenarios';
     static private $username = 'root';
-    static private $password = '';
+    static private $password = 'root';
     
     static public function conectar(){
         try {
