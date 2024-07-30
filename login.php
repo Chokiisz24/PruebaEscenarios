@@ -21,6 +21,11 @@
           <label for="passwd">Contraseña:</label>
           <input type="password" class="form-control" id="passwd" name="passwd" placeholder="Ingrese su contraseña" >
         </div>
+        <!-- Funcion de Mostrar Contraseña -->
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="showPassword">
+          <label class="form-check-label" for="showPassword">Mostrar Contraseña</label>
+        </div>        
         <button type="submit" id="btniniciar" name="btniniciar" class="btn btn-primary btn-block" >Iniciar Sesion</button>
         <a href="#" class="forgotpass">¿Olvidaste tu contraseña?</a>
       </form>
@@ -29,7 +34,7 @@
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="/js/script.js"></script>
+  <script src="./js/script.js"></script>
 
 </body>
 </html>

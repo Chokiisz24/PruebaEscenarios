@@ -1,4 +1,4 @@
-  const passwordInput = document.getElementById('password');
+  const passwordInput = document.getElementById('passwd');
   const showPasswordCheckbox = document.getElementById('showPassword');
   // Agregar un evento de cambio al checkbox
   showPasswordCheckbox.addEventListener('change', function() {
