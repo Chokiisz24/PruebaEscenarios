@@ -51,12 +51,12 @@ $escenario=$resultado->fetchAll(PDO::FETCH_ASSOC);
                 </div>
             </div>
     </nav>
-    <div align="center" class="pt-4 text-light" id="logostatus">
+    <div class="pt-4 text-light" id="logostatus">
         <img src="../img/status.png" class="center" width="60px">
         <h1 class="m-2">ESTADOS</h1>
 </div>
 
-   
+
     <div class="m-5">
             <table id="example" class="table table-striped" style="width:100%">
                 <thead class="text-center table-info">
@@ -80,14 +80,11 @@ $escenario=$resultado->fetchAll(PDO::FETCH_ASSOC);
                     <td> <?php echo $escenarios['media'] ?></td>
                     <td> <?php echo $escenarios['folio'] ?></td>
                     <td> <?php echo $escenarios['fecha'] ?></td>
-                    
-
-                        </tr>
-                        <?php
-                        }
-                        ?>
+                    </tr>
+                    <?php
+                    }
+                    ?>
                     </tbody>
-
             </table>
     </div>
 

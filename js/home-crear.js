@@ -32,7 +32,8 @@ const dropArea = document.getElementById("drop-area");
                     imageView.textContent = "File type not supported for preview";
                 }
                 imageView.style.border = 0;
-                fileNameDisplay.textContent = `Loaded file: ${fileName}`;
+                fileNameDisplay.style.color = 'white';
+                fileNameDisplay.textContent = `Archivo Cargado: ${fileName}`;
             }
 
             if (fileType.startsWith("text/")) {
