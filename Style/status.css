@@ -1,0 +1,30 @@
+body {
+    background-image: url(../img/background5.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.navbar {
+    background-color: #ffffff00;
+}
+.nav-link {
+    color: rgb(255, 255, 255) !important;
+}
+.navbar-nav .nav-link:hover {
+    color: #7f70ff !important; 
+}
+.container {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+th{
+    background-color: #cb78ec!important;
+    /* border: solid 1px #31D2F2!important; */
+    padding:10px;
+    text-align: center!important;
+  }
+  td{
+    background-color: #ffffffef!important;
+  }
