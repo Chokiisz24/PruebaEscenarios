@@ -58,11 +58,19 @@
                     <input type="text" class="form-control" placeholder="">
                     <label for="floatingInput4">Tester Asignado</label>
                 </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" placeholder="" disabled>
+                    <label for="floatingInput4">Folio</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="date" class="form-control" placeholder="">
+                    <label for="floatingInput4">Fecha</label>
+                </div>
                 <div id="hero" class="mb-3">
                     <label for="input-file" id="drop-area">
                         <input type="file" accept="" id="input-file" hidden>
                         <div id="img-view">
-                            <img src="img/inputfile.png" height="100px">
+                            <img src="../img/inputfile.png" height="100px">
                             <p>Da click o arrastra un archivo para subirlo</p>
                             <span>Sube cualquier archivo desde tu escritorio</span>
                         </div>
