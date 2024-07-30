@@ -2,29 +2,31 @@
 
 require_once 'conexion.php';
 
-class ControllerEscenario{
-    public function escenarioController($modescenario){
+class ControlleEscenario
+{
+    public function EscenarioController($modescenario)
+    {
         $tabla = 'escenario';
+        echo 'Llego al controlador PARA INSERTAR '. $modescenario->getTitulo();
         $conn = Conexion::conectar();
-        $stmt = $conn->prepare("INSERT INTO $tabla (nombre) VALUES (:nombre)");
-        $stmt->bindParam(':nombre', $modescenario->getNombre(), PDO::PARAM_STR);
-        $stmt->execute();
-        $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-        $val = $stmt->fetchAll();
+        
         try {
-            if ($val == null || $val == '' || $val == [] || $val == false) {
-                throw new Exception('No se encontro el escenario');
-            }
-        } catch (Exception $e) {
+            $stmt = $conn->prepare("INSERT INTO $tabla (titulo, descripcion, media, folio, fecha) 
+            VALUES (:titulo, :descripcion, :media, :folio, :fecha)");
+            $stmt->bindParam(':titulo', $modescenario->getTitulo(), PDO::PARAM_STR);
+            $stmt->bindParam(':descripcion', $modescenario->getDescripcion(), PDO::PARAM_STR);
+            $stmt->bindParam(':media', $modescenario->getMedia(), PDO::PARAM_STR);
+            $stmt->bindParam(':folio', $modescenario->getFolio(), PDO::PARAM_STR);
+            $stmt->bindParam(':fecha', $modescenario->getFecha(), PDO::PARAM_STR);
+
+            $stmt->execute();
+            echo 'Se inserto correctamente';
+            // Puedes retornar el ID del nuevo registro si es necesario
+            return $conn->lastInsertId(); 
+
+        } catch (PDOException $e) {
             echo 'Error: ' . $e->getMessage();
-        }
-        for ($i = 0; $i < count($val); $i++) {
-            if ($val[$i]['nombre'] == $modescenario->getNombre()) {
-                header('Location: View/home-crear.php');
-                exit();
-            }
+            // Puedes lanzar una excepción o manejar el error de acuerdo a tus necesidades
         }
     }
 }
-
-?>
