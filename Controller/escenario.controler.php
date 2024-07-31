@@ -7,7 +7,6 @@ class ControlleEscenario
     public function EscenarioController($modescenario)
     {
         $tabla = 'escenario';
-        echo 'Llego al controlador PARA INSERTAR '. $modescenario->getTitulo();
         $conn = Conexion::conectar();
         
         try {
@@ -20,7 +19,6 @@ class ControlleEscenario
             $stmt->bindParam(':fecha', $modescenario->getFecha(), PDO::PARAM_STR);
 
             $stmt->execute();
-            echo 'Se inserto correctamente';
             // Puedes retornar el ID del nuevo registro si es necesario
             return $conn->lastInsertId(); 
 

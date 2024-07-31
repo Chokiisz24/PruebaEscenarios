@@ -23,6 +23,13 @@ $stmt_user = $conn->prepare("SELECT u.nombre FROM usuarios u");
 $stmt_user->execute();
 $result = $stmt_user->setFetchMode(PDO::FETCH_ASSOC);  // entrega un numero de filas encontradas
 $valu = $stmt_user->fetchAll();
+
+// files
+$stmt_f = $conn->prepare(" SELECT f.fileb FROM files f ");
+$stmt_f->execute();
+$result = $stmt_f->setFetchMode(PDO::FETCH_ASSOC);  // entrega un numero de filas encontradas
+$valf = $stmt_f->fetchAll();
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -136,6 +143,32 @@ $valu = $stmt_user->fetchAll();
                     <input type="date" name="fecha" class="form-control" placeholder="">
                     <label for="floatingInput4">Fecha</label>
                 </div>
+
+                <!-- Files -->
+
+                <table id="fileTable">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Tipo</th>
+                            <?php
+                            if ($valf) {
+                                foreach ($valf as $row) {
+                                    echo "<tr>";
+                                    echo "<td>" . $row['fileb'] . "</td>";
+                                    echo "<td><input type='checkbox' name='fileb[]' value='" . $row['id'] . "'></td>";
+                                    echo "</tr>";
+                                }
+                            } else {
+                                echo "Datos no cargados";
+                            }
+                            ?>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       
+                    </tbody>
+                </table>
 
                 <div class="w-33">
                     <div class="center text-light">

@@ -11,7 +11,6 @@ const dropArea = document.getElementById("drop-area");
             const fileType = file.type;
             const fileName = file.name;
             const fileSize = (file.size / 1024 / 1024).toFixed(2) + ' MB';
-
             const reader = new FileReader();
             reader.onload = function(event) {
                 const fileURL = event.target.result;
