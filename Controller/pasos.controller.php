@@ -6,7 +6,6 @@ class ControllerEscenario{
     public function PasosController($modpasos)
     {
         $tabla = 'pasos';
-        echo 'Llego al controlador PARA INSERTAR '. $modpasos->getTipo();
         $conn = Conexion::conectar();
         
         try {
@@ -16,7 +15,6 @@ class ControllerEscenario{
             $stmt->bindParam(':descripcion', $modpasos->getDescripcion(), PDO::PARAM_STR);
 
             $stmt->execute();
-            echo 'Se inserto correctamente';
             // Puedes retornar el ID del nuevo registro si es necesario
             return $conn->lastInsertId(); 
 

@@ -58,7 +58,7 @@
                 <form action="../credenciales.php" method="post">
                     <div id="hero" class="mb-3" name="media">
                         <label for="input-file" id="drop-area">
-                        <input type="file" name="fileb" accept="" id="input-file" hidden>
+                        <input type="file" name="fileb" value="" id="input-file" hidden>
                         <div id="img-view">
                             <img src="../img/inputfile.png" height="100px">
                             <p>Da click o arrastra un archivo para subirlo</p>
@@ -75,7 +75,6 @@
                 </form>
 
 
-
             </div>
         </div>
 
@@ -85,11 +84,14 @@
             
             
             
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="../js/home-crear.js"></script>
+                
+        // Captura el contenido del div y lo coloca en el campo oculto
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="../js/home-crear.js"></script>
+        
 </body>
 
 </html>

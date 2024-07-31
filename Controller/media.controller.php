@@ -11,8 +11,7 @@ class ControllerMedia{
         $conn = Conexion::conectar();
         try{
 
-            $stmt = $conn->prepare("INSERT INTO $tabla (nombre, fileb) VALUES (:nombre, :fileb)");
-            $stmt->bindParam(':nombre', $modmedia->getNombre(), PDO::PARAM_STR);
+            $stmt = $conn->prepare("INSERT INTO $tabla (fileb) VALUES (:fileb)");
             $stmt->bindParam(':fileb', $modmedia->getFileb(), PDO::PARAM_STR);
             $stmt->execute();
             return $conn->lastInsertId();
