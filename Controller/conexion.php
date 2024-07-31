@@ -5,14 +5,14 @@ class Conexion{
     static private $host = 'localhost';
     static private $dbname = 'escenarios';
     static private $username = 'root';
-    static private $password = 'root';
+    static private $password = '';
     
     static public function conectar(){
         try {
             $link = new PDO("mysql:host=" . self::$host . "; dbname=" . self::$dbname, self::$username, self::$password);
            // $link->exec("set names utf8");
             $link->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "Connected successfully".'---';
+            //echo "Connected successfully".'---';
             return $link;
         
     } catch(PDOException $e) {

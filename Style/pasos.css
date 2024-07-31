@@ -82,9 +82,10 @@ body {
     flex: 0 0 26%!important; 
     margin-right: 10px!important;
 }
-#logoescenario{
+#logopasos{
     display:flex;
     justify-content: center;
     align-items:center;
 }
+
 

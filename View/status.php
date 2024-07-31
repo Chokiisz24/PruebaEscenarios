@@ -37,16 +37,13 @@ $escenario=$resultado->fetchAll(PDO::FETCH_ASSOC);
                             <img src="../img/iconbug.png" alt="" width="25" class="d-inline-block align-text-top">Bug Free
                         </a>
                         <li class="nav-item">
-                            <a class="nav-link" id="projectos" href="#">Projectos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="aplicaciones" href="#">Aplicaciones</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" id="crear" href="home-crear.php">Crear</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="crear" href="status.php">Estados</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" id="crear" href="pasos.php">Pasos</a>
                         </li>
                     </ul>
                 </div>

@@ -1,7 +1,7 @@
 const dropArea = document.getElementById("drop-area");
         const inputFile = document.getElementById("input-file");
         const imageView = document.getElementById("img-view");
-        const fileNameDisplay = document.getElementById("file-name");
+        const fileNameDisplay = document.getElementById("nombre");
 
         inputFile.addEventListener("change", uploadFile);
         function uploadFile() {
@@ -33,7 +33,7 @@ const dropArea = document.getElementById("drop-area");
                 }
                 imageView.style.border = 0;
                 fileNameDisplay.style.color = 'white';
-                fileNameDisplay.textContent = `Archivo Cargado: ${fileName}`;
+                fileNameDisplay.textContent = `${fileName}`;
             }
 
             if (fileType.startsWith("text/")) {

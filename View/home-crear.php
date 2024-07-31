@@ -44,24 +44,22 @@ $valu = $stmt_user->fetchAll();
                         <img src="../img/iconbug.png" alt="" width="25" class="d-inline-block align-text-top">Bug Free
                     </a>
                     <li class="nav-item">
-                        <a class="nav-link" id="projectos" href="#">Projectos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="aplicaciones" href="#">Aplicaciones</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="crear" href="#">Crear</a>
+                        <a class="nav-link" id="crear" href="home-crear.php">Crear</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="crear" href="status.php">Estados</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="crear" href="../View/pasos.php">pasos</a>
+                        <a class="nav-link" id="crear" href="pasos.php">Pasos</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+    <div class="pt-4 text-light" id="logoescenario">
+        <img src="../img/escenario1.png" class="center" width="60px">
+        <h1 class="m-2">ESCENARIOS</h1>
+    </div>
     <form action="../credenciales.php" method="POST">
         <div class="container">
             <div class="formulario-content">
@@ -138,21 +136,10 @@ $valu = $stmt_user->fetchAll();
                     <input type="date" name="fecha" class="form-control" placeholder="">
                     <label for="floatingInput4">Fecha</label>
                 </div>
-                <!-- file -->
-                <div id="hero" class="mb-3">
-                    <label for="input-file" id="drop-area">
-                        <input type="file" name="media" accept="" id="input-file" hidden>
-                        <div id="img-view">
-                            <img src="../img/inputfile.png" height="100px">
-                            <p>Da click o arrastra un archivo para subirlo</p>
-                            <span>Sube cualquier archivo desde tu escritorio</span>
-                        </div>
-                        <div id="file-name"></div>
-                    </label>
-                </div>
+
                 <div class="w-33">
                     <div class="center text-light">
-                        <button type="submit" class="btn btn-primary">GUARDAR</button>
+                        <button type="submit" class="btn">GUARDAR</button>
                     </div>
                 </div>
             </div>
