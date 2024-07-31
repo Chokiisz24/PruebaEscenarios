@@ -18,7 +18,7 @@ class ControllerLogin
         $val = $stmt->fetchAll();
         try {
             if ($val == null || $val == '' || $val == [] || $val == false) {
-                throw new Exception('No se encontro el usuario');
+                echo 'No se encontraron registros :(    -----  ';            
             }
         } catch (Exception $e) {
             echo 'Error: ' . $e->getMessage();
