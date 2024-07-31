@@ -1,12 +1,40 @@
+<?php
+// Conectando, seleccionando la base de datos
+require_once '../Controller/conexion.php';
+
+$conn = Conexion::conectar();
+$tabla = 'pasos';
+
+// // Consulta para obtener tipos únicos
+$stmt_tipo = $conn->prepare("SELECT DISTINCT p.tipo FROM $tabla p WHERE tipo = 'Entrada' or tipo = 'Salida'");
+$stmt_tipo->execute();
+$result = $stmt_tipo->setFetchMode(PDO::FETCH_ASSOC);  // entrega un numero de filas encontradas
+$valt = $stmt_tipo->fetchAll();
+
+//filas de descripcion
+
+$stmt_desc = $conn->prepare("SELECT p.descripcion FROM $tabla p");
+$stmt_desc->execute();
+$result = $stmt_desc->setFetchMode(PDO::FETCH_ASSOC);  // entrega un numero de filas encontradas
+$vald = $stmt_desc->fetchAll();
+
+//usuario
+$stmt_user = $conn->prepare("SELECT u.nombre FROM usuarios u");
+$stmt_user->execute();
+$result = $stmt_user->setFetchMode(PDO::FETCH_ASSOC);  // entrega un numero de filas encontradas
+$valu = $stmt_user->fetchAll();
+?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../Style/home.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Style/home.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Login</title>
 </head>
+
 <body>
     <nav class="navbar navbar-light navbar-expand-lg">
         <div class="container-fluid">
@@ -40,30 +68,65 @@
                 <h1 class="text-center text-light mb-3">Crear Escenarios</h1>
                 <!-- titulo -->
                 <div class="form-floating mb-3">
-                    <input type="text" name="titulo" class="form-control"  placeholder="">
+                    <input type="text" name="titulo" class="form-control" placeholder="">
                     <label for="floatingInput1">Titulo</label>
                 </div>
                 <!-- descripcion -->
                 <div class="form-floating mb-3">
-                    <input type="text" name="descripcion" class="form-control"placeholder="">
+                    <input type="text" name="descripcion" class="form-control" placeholder="">
                     <label for="floatingInput2">Descripcion</label>
                 </div>
                 <!-- Pasos -->
                 <div class="input-group">
                     <select class="form-select" name="tipo" id="tipo">
-                        <option selected>Seleccione</option>
-                        <option value="1" >Entrada</option>
-                        <option value="2" >Salida</option>
+
+                        <?php
+                        if ($valt) {
+                            foreach ($valt as $row) {
+
+                                echo "<option value='>" . $row['id'] . "'/>" . $row['tipo'] . "</option>";
+                            }
+                        } else {
+                            echo "Datos no cargados";
+                        }
+
+                        ?>
+
                     </select>
                     <div class="form-floating flex-grow-1">
-                        <input type="text" name="pasos" class="form-control"placeholder="">
-                        <label for="floatingInput3">Pasos</label>
+                        <select class="form-select" name="tipo" id="tipo">
+
+                            <?php
+                            if ($vald) {
+                                foreach ($vald as $row) {
+
+                                    echo "<option value='>" . $row['id'] . "'/>" . $row['descripcion'] . "</option>";
+                                }
+                            } else {
+                                echo "Datos no cargados";
+                            }
+
+                            ?>
+
+                        </select>
                     </div>
                 </div>
                 <!-- Tester -->
                 <div class="form-floating mb-3">
-                    <input type="text" name="tester" class="form-control" placeholder="">
-                    <label for="floatingInput4">Tester Asignado</label>
+                    <select class="form-select" name="tester" id="tester">
+
+                        <?php
+                        if ($valu) {
+                            foreach ($valu as $row) {
+
+                                echo "<option value='>" . $row['id'] . "'/>" . $row['nombre'] . "</option>";
+                            }
+                        } else {
+                            echo "Datos no cargados";
+                        }
+
+                        ?>
+                    </select>
                 </div>
                 <!-- folio -->
                 <div class="form-floating mb-3">
@@ -99,6 +162,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="../js/home-crear.js"></script>
+    <script src="../js/home-crear.js"></script>
 </body>
+
 </html>
